@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const parent = React.createElement(
+/** const parent = React.createElement(
   "div",
   { id: "parent" },
   React.createElement("div", { id: "child" }, [
@@ -8,18 +8,32 @@ const parent = React.createElement(
     React.createElement("h2", { key: "h2" }, "i am an h2 tag"),
   ])
 );
-
-/**  const heading = React.createElement(
+ const heading = React.createElement(
         "h1",
          {id: "heading", xyz: "abc"}, 
          "Hello world");
+         //root.render(parent);
 */
 
-// JSX
+// JSX ---> react element
+// class based components - OLD
+//functional components - NEW
 
-const jsxheading = <h1 id="heading">Namaste React using JSX</h1>;
+const heading = (
+  <h1 id="heading" className="head">
+    Namaste React using JSX
+  </h1>
+);
+
+const fn = () => true;
+const fn2 = () => {
+  return true;
+};
+const HeadingComponent = () => <h1> Namaste react functional component</h1>;
+
+const HeadingComponent2 = () => {
+  return <h1 className="heading"> Namaste react functional component</h1>;
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(parent);
-root.render(jsxheading);
+root.render(heading);
