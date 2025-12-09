@@ -19,7 +19,7 @@ import ReactDOM from "react-dom/client";
 // class based components - OLD
 //functional components - NEW
 
-const heading = (
+const Heading = (
   <h1 id="heading" className="head">
     Namaste React using JSX
   </h1>
@@ -30,10 +30,14 @@ const fn2 = () => {
   return true;
 };
 const HeadingComponent = () => <h1> Namaste react functional component</h1>;
+// component composition in inter linking 2 or more react components into a single functional component
 
 const HeadingComponent2 = () => {
-  return <h1 className="heading"> Namaste react functional component</h1>;
+  <div id="container">
+    <h1 className="heading"> Namaste react functional component</h1>;
+  </div>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+root.render(Heading);
+root.render(<HeadingComponent />);
